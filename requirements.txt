@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+sentence-transformers
+faiss-cpu
+numpy
+scikit-learn
+nltk
+unidecode
+torch==2.2.2+cpu
+--extra-index-url https://download.pytorch.org/whl/cpu
+
