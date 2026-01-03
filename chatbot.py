@@ -12,9 +12,10 @@ import numpy as np
 nltk.download('punkt')
 
 # ================= LOAD INTENTS =================
-with open('data.json', 'r', encoding='utf-8') as f:
-    intents = json.load(f)
+with open("knowledge_base.pkl", "rb") as f:
+    knowledge_base = pickle.load(f)
 
+index = faiss.read_index("store_policy_index.faiss")
 # ================= LOAD SYSTEM (LAZY) =================
 model = None
 knowledge_base = None
@@ -75,3 +76,4 @@ def get_semantic_answer(query):
 # ================= MAIN =================
 def chatbot_response(user_input):
     return get_semantic_answer(user_input)
+
